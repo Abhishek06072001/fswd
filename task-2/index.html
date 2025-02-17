@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Responsive Dashboard</title>
+  <script src="https://cdn.tailwindcss.com"></script>
+</head>
+<body class="bg-gray-100">
+
+  <!-- Sidebar -->
+  <div class="flex h-screen">
+    <aside class="bg-gray-800 text-white w-64 space-y-6 py-7 px-5 hidden sm:block">
+      <h1 class="text-2xl font-bold">Dashboard</h1>
+      <nav>
+        <a href="#" class="block py-2.5 px-4 rounded transition duration-200 hover:bg-gray-700">🏠 Home</a>
+        <a href="#" class="block py-2.5 px-4 rounded transition duration-200 hover:bg-gray-700">📊 Analytics</a>
+        <a href="#" class="block py-2.5 px-4 rounded transition duration-200 hover:bg-gray-700">📁 Projects</a>
+        <a href="#" class="block py-2.5 px-4 rounded transition duration-200 hover:bg-gray-700">⚙ Settings</a>
+      </nav>
+    </aside>
+
+    <!-- Main Content -->
+    <div class="flex-1 flex flex-col">
+      <!-- Navbar -->
+      <header class="bg-white shadow p-4 flex justify-between items-center">
+        <button id="menu-btn" class="sm:hidden p-2 rounded-md bg-gray-800 text-white">
+          ☰
+        </button>
+        <h2 class="text-xl font-semibold">Dashboard</h2>
+        <div class="flex space-x-4">
+          <span class="hidden sm:inline text-gray-600">Hello, User</span>
+          <img src="https://media.istockphoto.com/id/1150254232/photo/headshot-of-smiling-european-caucasian-business-man-with-haircut-and-glasses-isolated-on.jpg?s=612x612&w=0&k=20&c=-gJPo-MGTk2lGTQ0rtLn7dRZHBUV8UymdcRH1b1ye9A=" class="rounded-full w-10 h-10 object-cover" alt="Profile">
+        </div>
+      </header>
+
+      <!-- Dashboard Cards -->
+      <main class="p-6 grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6">
+        <!-- Card 1 -->
+        <div class="bg-white p-6 rounded-lg shadow">
+          <h3 class="text-lg font-semibold">Users</h3>
+          <p class="text-2xl font-bold">1,234</p>
+          <p class="text-sm text-gray-500">New users this week</p>
+        </div>
+        <!-- Card 2 -->
+        <div class="bg-white p-6 rounded-lg shadow">
+          <h3 class="text-lg font-semibold">Revenue</h3>
+          <p class="text-2xl font-bold">$5,678</p>
+          <p class="text-sm text-gray-500">Earnings this month</p>
+        </div>
+        <!-- Card 3 -->
+        <div class="bg-white p-6 rounded-lg shadow">
+          <h3 class="text-lg font-semibold">Orders</h3>
+          <p class="text-2xl font-bold">321</p>
+          <p class="text-sm text-gray-500">Completed orders</p>
+        </div>
+        <!-- Card 4 -->
+        <div class="bg-white p-6 rounded-lg shadow">
+          <h3 class="text-lg font-semibold">Support Tickets</h3>
+          <p class="text-2xl font-bold">27</p>
+          <p class="text-sm text-gray-500">Pending tickets</p>
+        </div>
+      </main>
+    </div>
+  </div>
+
+  <script>
+    const menuBtn = document.getElementById('menu-btn');
+    const sidebar = document.querySelector('aside');
+
+    menuBtn.addEventListener('click', () => {
+      sidebar.classList.toggle('hidden');
+    });
+  </script>
+
+</body>
+</html>
